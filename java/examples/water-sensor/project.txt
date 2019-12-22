@@ -1,0 +1,1 @@
+../../../common/examples/water-sensor/project.txt
