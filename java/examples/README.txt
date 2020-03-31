@@ -1,7 +1,7 @@
 This directory contains a few example Cell projects to get you started. You'll
-need Java 8, and they will work on any platform supported by it. To build them,
-just cd into the corresponding directory and type 'make'. Then run the
-generated jar file.
+need Java 8 or higher, and they will work on any platform supported by it.
+To build them, just cd into the corresponding directory and type 'make'. Then
+follow the on-screen instructions to run the program.
 
 The project.txt file in each directory contains the list of Cell source code
 files that are included in the project. Here's a description of the available
@@ -14,13 +14,7 @@ send-msg:
   initial state from a file, reads a list of messages from another, sends all the
   messages to the automaton instance and writes the final state to a third file.
   It uses the Counter automaton described in the online documentation, but you
-  can easily replace it with your own relational automaton. Once you've built
-  the jar file, you can run it with the provided sample data like this:
-
-    java -jar send-msgs.jar init-state.txt msg-list.txt final-state.txt
-
-  After that, the file final-state.txt will contain the final state of the
-  automaton.
+  can easily replace it with your own relational automaton.
 
 water-sensor:
   Another example project taken from the "Using reactive automata" section of the

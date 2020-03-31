@@ -1,1 +1,0 @@
-../../../common/examples/send-msgs/expected-final-state.txt

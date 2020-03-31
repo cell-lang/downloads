@@ -46,7 +46,7 @@
 			<key>comment</key>
 			<string>Keywords</string>
 			<key>match</key>
-			<string>\b(after|and|apply|assert|assume|break|class|delete|do|elapsed|else|every|fail|false|for|if|implicit|insert|let|loop|match|not|or|print|protocol|reactive|read|return|sans|schema|set|since|super|then|this|true|type|typevar|undefined|unique|update|using|volatile|when|while|write)\b</string>
+			<string>\b(after|and|apply|assert|assume|break|class|delete|do|elapsed|else|every|fail|false|for|if|implicit|insert|let|loop|match|not|or|print|protocol|reactive|return|sans|schema|set|since|super|then|this|true|type|typevar|undefined|unique|update|using|volatile|when|while)\b</string>
 			<key>name</key>
 			<string>keyword</string>
 		</dict>
@@ -84,11 +84,19 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Symbol literal</string>
+			<string>Symbol literals</string>
 			<key>match</key>
 			<string>:([a-z0-9_]+)</string>
 			<key>name</key>
 			<string>constant.language</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Derived literals</string>
+			<key>match</key>
+			<string>\`[^\`]*\`</string>
+			<key>name</key>
+			<string>entity.name.tag</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

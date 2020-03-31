@@ -10,7 +10,6 @@ import java.nio.file.Files;
 import java.nio.charset.Charset;
 
 import net.cell_lang.Logins;
-import net.cell_lang.Long_String;
 
 
 class Main {
@@ -43,10 +42,10 @@ class Main {
       if (!msg.equals("") && !msg.startsWith("//")) {
         try {
           logins.execute(msg);
-          System.out.printf("Success: %s\n", msg);
+          System.out.printf("Success: %s\n\n", msg);
         }
         catch (RuntimeException e) {
-          System.out.printf("Failure: %s\n", msg);
+          System.out.printf("Failure: %s\n\n", msg);
         }
         // Printing the state after the update
         logins.save(new PrintWriter(System.out));

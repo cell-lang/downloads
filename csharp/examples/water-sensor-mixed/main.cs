@@ -7,18 +7,18 @@ class WaterSensor {
     void OnStateChange(string newState);
   }
 
-  Cell.Facades.WaterSensor target = new Cell.Facades.WaterSensor();
+  Cell.Automata.WaterSensor target = new Cell.Automata.WaterSensor();
 
   public WaterSensor() {
     target.Apply();
   }
 
   public void FailedReading() {
-    target.SetInput(Cell.Facades.WaterSensor.Input.RAW_READING, "nothing");
+    target.SetInput(Cell.Automata.WaterSensor.Input.RAW_READING, "nothing");
   }
 
   public void NewReading(bool value) {
-    target.SetInput(Cell.Facades.WaterSensor.Input.RAW_READING, value ? "just(true)" : "just(false)");
+    target.SetInput(Cell.Automata.WaterSensor.Input.RAW_READING, value ? "just(true)" : "just(false)");
   }
 
   public void Apply(int elapsedSecs, Observer observer) {
@@ -26,10 +26,10 @@ class WaterSensor {
     target.SetElapsedSecs(elapsedSecs);
     do {
       done = target.Apply();
-      foreach (Cell.Facades.WaterSensor.Output id in target.ChangedOutputs()) {
+      foreach (Cell.Automata.WaterSensor.Output id in target.ChangedOutputs()) {
         string value = target.ReadOutput(id);
         switch (id) {
-          case Cell.Facades.WaterSensor.Output.SENSOR_STATE:
+          case Cell.Automata.WaterSensor.Output.SENSOR_STATE:
             observer.OnStateChange(value);
             break;
         }

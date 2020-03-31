@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-using Cell.Facades;
+using Cell.Automata;
 
 
 class App {
@@ -35,10 +35,10 @@ class App {
       if (msg != "" && !msg.StartsWith("//")) {
         try {
           logins.Execute(msg);
-          Console.WriteLine("Success: {0}", msg);
+          Console.WriteLine("Success: {0}\n", msg);
         }
         catch (Exception) {
-          Console.WriteLine("Failure: {0}", msg);
+          Console.WriteLine("Failure: {0}\n", msg);
         }
         // Printing the state after the update
         logins.Save(Console.OpenStandardOutput());
